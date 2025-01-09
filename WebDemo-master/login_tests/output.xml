@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.13.0 on win32)" generated="2025-01-08T15:00:38.640253" rpa="false" schemaversion="5">
+<suite id="s1" name="Valid Login" source="C:\Users\acer\Documents\Year3\SoftwereEngineer\Lab7\WebDemo-master\login_tests\valid_login.robot">
+<test id="s1-t1" name="Valid Login" line="9">
+<kw name="Open Browser To Login Page" owner="resource">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-01-08T15:00:38.902561" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000029F76995400&gt;</msg>
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-01-08T15:00:38.902278" elapsed="0.000318"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-01-08T15:00:38.902889" level="INFO">${chrome_options.binary_location} = C:/Users/acer/Documents/Year3/SoftwereEngineer/Lab7/ChromeForTesting/chrome-win64/chrome.exe</msg>
+<var>${chrome_options.binary_location}</var>
+<arg>${CHROME_BROWSER_PATH}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-01-08T15:00:38.902720" elapsed="0.000195"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-01-08T15:00:38.903529" level="INFO">${service} = &lt;selenium.webdriver.chrome.service.Service object at 0x0000029F76995160&gt;</msg>
+<var>${service}</var>
+<arg>sys.modules["selenium.webdriver.chrome.service"].Service(executable_path=r"${CHROME_DRIVER_PATH}")</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-01-08T15:00:38.903005" elapsed="0.000572"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-01-08T15:00:38.903891" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${chrome_options}</arg>
+<arg>service=${service}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-01-08T15:00:38.903697" elapsed="1.051480"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-01-08T15:00:39.955708" level="INFO">Opening url 'http://localhost:7272/'</msg>
+<arg>${LOGIN URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-01-08T15:00:39.955536" elapsed="0.588250"/>
+</kw>
+<kw name="Login Page Should Be Open" owner="resource">
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-01-08T15:00:40.563112" level="INFO">Page title is 'Login Page'.</msg>
+<arg>Login Page</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-01-08T15:00:40.544576" elapsed="0.018765"/>
+</kw>
+<status status="PASS" start="2025-01-08T15:00:40.544144" elapsed="0.019404"/>
+</kw>
+<status status="PASS" start="2025-01-08T15:00:38.901549" elapsed="1.662083"/>
+</kw>
+<kw name="Input Username" owner="resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-08T15:00:40.565040" level="INFO">Typing text 'demo' into text field 'username_field'.</msg>
+<arg>username_field</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-08T15:00:40.564521" elapsed="0.130712"/>
+</kw>
+<arg>demo</arg>
+<status status="PASS" start="2025-01-08T15:00:40.564132" elapsed="0.131244"/>
+</kw>
+<kw name="Input Password" owner="resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-08T15:00:40.696706" level="INFO">Typing text 'mode' into text field 'password_field'.</msg>
+<arg>password_field</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-08T15:00:40.696284" elapsed="0.052514"/>
+</kw>
+<arg>mode</arg>
+<status status="PASS" start="2025-01-08T15:00:40.695764" elapsed="0.053262"/>
+</kw>
+<kw name="Submit Credentials" owner="resource">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-01-08T15:00:40.750365" level="INFO">Clicking button 'login_button'.</msg>
+<arg>login_button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-08T15:00:40.750147" elapsed="0.148274"/>
+</kw>
+<status status="PASS" start="2025-01-08T15:00:40.749525" elapsed="0.149066"/>
+</kw>
+<kw name="Welcome Page Should Be Open" owner="resource">
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-01-08T15:00:40.906493" level="INFO">Current location is 'http://localhost:7272/welcome.html'.</msg>
+<arg>${WELCOME URL}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-01-08T15:00:40.899951" elapsed="0.006668"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-01-08T15:00:40.912532" level="INFO">Page title is 'Welcome Page'.</msg>
+<arg>Welcome Page</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-01-08T15:00:40.906835" elapsed="0.005802"/>
+</kw>
+<status status="PASS" start="2025-01-08T15:00:40.899316" elapsed="0.013436"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-01-08T15:00:40.913434" elapsed="2.353222"/>
+</kw>
+<status status="PASS" start="2025-01-08T15:00:38.900225" elapsed="4.367217"/>
+</test>
+<doc>A test suite with a single test for valid login.
+
+This test has a workflow that is created using keywords in
+the imported resource file.</doc>
+<status status="PASS" start="2025-01-08T15:00:38.641724" elapsed="4.628675"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Valid Login">Valid Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
